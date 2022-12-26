@@ -1,22 +1,273 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 
 <head>
-    <title>FlaskTest</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DownPour Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href={{url_for( 'static',filename='style1.css' )}}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+
+
+
 </head>
 
 <body>
-    <h2>Welcome To GFG</h2>
-    <h4>Flask: Rendering Templates</h4>
-    <!-- this section can be replaced by a child document -->
-    {% block body %}
+
+    <section>
+        <input type="checkbox" id="check">
+        <header>
+            </div>
+            <h2><a href="#" class="logo">DownPour</a></h2>
+            <div class="navigation">
+                <a href="#">Home</a>
+                <a href="#about">Abstract</a>
+                <a href="#info">Developer</a>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#login">Login</a>
+            </div>
+            <label for="check">
+        <i class="fas fa-bars menu-btn"></i>
+        <i class="fas fa-times close-btn"></i>
+        </label>
+        </header>
+        <div class="content" style="margin-top: 8%;">
+            <div class="info">
+                <h2>Plant Trees <br><span>Save Rain</span></h2>
+                <p> "Plant trees to bring the rains and get rid of the summer's heat.” - Trees help reduce and moderate the temperature and climate, which is why it is so important that we have more of them</p>
+                <a href="#about" class="info-btn">More info</a>
+            </div>
+        </div>
+        <div class="media-icons">
+            <a href="https://www.linkedin.com/in/subhash-rowtu-951976212/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/subhash546/cs50"><i class="fab fa-github"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About DownPour Prediction</h2>
+        <p class="about-content" style="text-align: center;">
+
+            In the hydrological study, the main problem is accurately predicting the rainfall. Due to natural hazards and storm, farmers will lose and destroy their crops. To avoid these problems, accurately and timely predict the rainfall prediction earlier and
+            give caution more first to farmers. Rainfall is said to be an environmental aspect which affects the human activities such as farming production, construction, energy generation, forestry and tourism, etc. The rainfall prediction is more essential
+            as it is concerned with the maximum association with other factors like landslides, flooding, avalanches, earthquakes.
+            <br> <br> The performance of the various Machine Learning (ML) models, namely Lasso regression, ridge regression, elastic net regression, random forest, gradient boosting and decision tree regressor. Those models performances have been calculated
+            through the evaluation metrics such as R^2 score, Mean Absolute Error (MAE), Mean Square Error (MSE), and Root MeanSquareError (RMSE). The objective of this study is to compare different machine learning regression algorithms in rainfall dataset.In
+            this analysis, we conclude that the Lasso regression of the linear model is the best model amongsix MLmodels.Lasso model given more R^2 score is 99.21%, MAE is 13.68, MSE is 6432.41 and RMSE is 80.20 at 80 % training data set and 20% attest
+            dataset.
 
 
-    <p>This is a Flask application.</p>
+
+    </section>
+    <section id="info">
+        <div>
+            <img src="../static/.png" alt="Vasanth">
+        </div>
+        <div>
+            <h2>Developers</h2>
+            <p class="about-content">
+                M.Santhoshi (20MH5A0505)<br> R.U.P.Subhash (19MH1A0546) <br> P. Srinivas (19MH1A0544)<br> P. Anudeep (19MH1A0543)<br> Under the esteemed supervision of<br> Mrs.P.N.S.Lakshmi, M.Tech<br> Assistant Professor<br> Department Of Computer Science
+                and Engineering</p>
+        </div>
+    </section>
+
+    <section id="dashboard">
+        <h2>Dashboard</h2>
+        <p>This dashboard is done using a software called PowerBI which is a product of Microsoft. Here I have just attached the images of the dashboard because PowerBI needs oraganizational account. So to see the visualizations interactive I am attaching
+            my <a href="../static/rain.pbix" style="color: black; font-weight: bold;">PowerBI</a> dashboard file. This requires PowerBI software to open the file. The usage of dashboards like these is to bring a better understanding about the dataset
+            and also to bring some beautiful insights</p>
+        <img class="dashboard-image" src="../static/dashboard.png" alt="1">
+        <div>
+            <img src="../static/1.png" alt="1">
+            <img src="../static/3.png" alt="3">
+            <img src="../static/4.png" alt="4">
+            <img src="../static/5.png" alt="5">
+            <img src="../static/6.png" alt="6">
+            <img src="../static/7.png" alt="7">
+            <img src="../static/8.png" alt="8">
+            <img src="../static/9.png" alt="9">
+        </div>
+    </section>
+    <section id="login">
+
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <form>
+                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-facebook-f"></i>
+                      </button>
+
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-twitter"></i>
+                      </button>
+
+                            <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-linkedin-in"></i>
+                      </button>
+                        </div>
+
+                        <div class="divider d-flex align-items-center my-4">
+                            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <span>Email Address</span>
+                            <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address" />
+
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <span>Password</span>
+                            <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" />
+
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-md-0">
+
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3">
+                                <span>Remember me</span>
+                            </div>
+                            <a href="#!" class="text-body">Forgot password?</a>
+
+                        </div>
+
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account?
+                                <a href="#register" class="link-danger btn btn-lg">Register</a>
+                            </p>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="#!" class="text-white">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <!-- Right -->
+        </div>
+
+    </section>
+    <section id="register" style="background-color: rgb(153, 93, 93);">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-6">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                                    <form class="mx-1 mx-md-4">
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <span>Your Name</span>
+                                                <input type="text" id="form3Example1c" class="form-control" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <span>Your Email</span>
+                                                <input type="email" id="form3Example3c" class="form-control" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <span>Password</label>
+                                                <input type="password" id="form3Example4c" class="form-control" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <span>Repeat your password</span>
+                                                <input type="password" id="form3Example4cd" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" /><span>I agree all statements Terms of service </span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="button" class="btn btn-primary btn-lg">Register</button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-    {% endblock %}
 
+
+    <footer>
+        <p>
+            Developed with ❤️ by subhash
+        </p>
+        <div class="media-icons">
+            <a href="https://www.linkedin.com/in/subhash-rowtu-951976212/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/subhash546/cs50"><i class="fab fa-github"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 
