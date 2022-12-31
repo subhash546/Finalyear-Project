@@ -22,38 +22,33 @@ def reg():
 
 
     
-
-
-import sqlite3  
   
-con = sqlite3.connect("my.db")  
+conn = sqlite3.connect("subhash.db")  
 print("Database opened successfully")  
   
-
+# conn.execute('CREATE TABLE users (name TEXT, email TEXT, password TEXT)')
+# print ("Table created successfully")
+# conn.close()
   
   
   
-
 @app.route("/savedetails",methods = ["POST","GET"])  
-def saveDetails():  
-    msg = "msg"  
+def savedetails():  
+    msg = "demo"  
     if request.method == "POST":  
-        try:   
+        try:  
+            name = request.form["name"]  
             email = request.form["email"]  
-            password = request.form["password"] 
-            cpassword = request.form["cpassword"] 
-            with sqlite3.connect("my.db") as con:  
+            password = request.form["password"]  
+            with sqlite3.connect("subhash.db") as con:  
                 cur = con.cursor()  
-                cur.execute("INSERT into subhash ( email,password,cpassword) values (?,?,?)",(email,password,cpassword))  
+                cur.execute("INSERT into pro (name, email, password) values (?,?,?)",(name,email,password))  
                 con.commit()  
-                msg = "Employee successfully Added"
-               
+                msg = "User successfully Added"  
         except:  
             con.rollback()  
             msg = "We can not add the employee to the list"  
-        finally: 
-            print(msg); 
+        finally:  
             return render_template("success.html",msg = msg)  
-            con.close()  
 if __name__=='__main__':
     app.run(debug=True)

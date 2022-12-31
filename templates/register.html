@@ -127,25 +127,27 @@
     </style>
 
     <!-- Boxicons CSS -->
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
+
     <div class="container">
         <header>Signup</header>
+
         <form action="/savedetails" method="POST">
             <div class="field email-field">
                 <div class="input-field">
-                    <input type="email" placeholder="Enter your email" name="email" id="email" class="email" />
+                    <input type="text" placeholder="Username" name="name" id="name" class="name" required />
                 </div>
                 <span class="error email-error">
             <i class="bx bx-error-circle error-icon"></i>
-            <p class="error-text">Please enter a valid email</p>
+            
           </span>
             </div>
             <div class="field create-password">
                 <div class="input-field">
-                    <input type="password" placeholder="Create password" name="password" id="password" class="password" />
+                    <input type="email" placeholder="Enter your email" name="email" id="email" class="email" required/>
                     <i class="bx bx-hide show-hide"></i>
                 </div>
                 <span class="error password-error">
@@ -158,7 +160,7 @@
             </div>
             <div class="field confirm-password">
                 <div class="input-field">
-                    <input type="password" placeholder="Confirm password" name="cpassword " id="cpassword" class="cPassword" />
+                    <input type="password" placeholder="Password" name="password" id="password" class="password" required/>
                     <i class="bx bx-hide show-hide"></i>
                 </div>
                 <span class="error cPassword-error">
@@ -167,84 +169,13 @@
           </span>
             </div>
             <div class="input-field button">
-                <input type="submit" value="Submit Now" />
+                <input type="submit">
             </div>
-        </form>
     </div>
-
+    </form>
     <!-- JavaScript -->
-    <script>
-        const form = document.querySelector("form"),
-            emailField = form.querySelector(".email-field"),
-            emailInput = emailField.querySelector(".email"),
-            passField = form.querySelector(".create-password"),
-            passInput = passField.querySelector(".password"),
-            cPassField = form.querySelector(".confirm-password"),
-            cPassInput = cPassField.querySelector(".cPassword");
 
-        // Email Validtion
-        function checkEmail() {
-            const emaiPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-            if (!emailInput.value.match(emaiPattern)) {
-                return emailField.classList.add("invalid"); //adding invalid class if email value do not mathced with email pattern
-            }
-            emailField.classList.remove("invalid"); //removing invalid class if email value matched with emaiPattern
-        }
 
-        // Hide and show password
-        const eyeIcons = document.querySelectorAll(".show-hide");
-
-        eyeIcons.forEach((eyeIcon) => {
-            eyeIcon.addEventListener("click", () => {
-                const pInput = eyeIcon.parentElement.querySelector("input"); //getting parent element of eye icon and selecting the password input
-                if (pInput.type === "password") {
-                    eyeIcon.classList.replace("bx-hide", "bx-show");
-                    return (pInput.type = "text");
-                }
-                eyeIcon.classList.replace("bx-show", "bx-hide");
-                pInput.type = "password";
-            });
-        });
-
-        // Password Validation
-        function createPass() {
-            const passPattern =
-                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-            if (!passInput.value.match(passPattern)) {
-                return passField.classList.add("invalid"); //adding invalid class if password input value do not match with passPattern
-            }
-            passField.classList.remove("invalid"); //removing invalid class if password input value matched with passPattern
-        }
-
-        // Confirm Password Validtion
-        function confirmPass() {
-            if (passInput.value !== cPassInput.value || cPassInput.value === "") {
-                return cPassField.classList.add("invalid");
-            }
-            cPassField.classList.remove("invalid");
-        }
-
-        // Calling Funtion on Form Sumbit
-        form.addEventListener("submit", (e) => {
-            e.preventDefault(); //preventing form submitting
-            checkEmail();
-            createPass();
-            confirmPass();
-
-            //calling function on key up
-            emailInput.addEventListener("keyup", checkEmail);
-            passInput.addEventListener("keyup", createPass);
-            cPassInput.addEventListener("keyup", confirmPass);
-
-            if (!emailField.classList.contains("invalid") &&
-                !passField.classList.contains("invalid") &&
-                !cPassField.classList.contains("invalid")
-            ) {
-                location.href = form.getAttribute("action");
-            }
-        });
-    </script>-->
 </body>
 
 </html>
