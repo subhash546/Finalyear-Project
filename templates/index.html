@@ -13,133 +13,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <!-- Bootstrap CSS -->
-    <style>
-        /* FontAwesome for working BootSnippet :> */
-        
-        @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-        #team {
-            background: #eee !important;
-        }
-        
-        .btn-primary:hover,
-        .btn-primary:focus {
-            background-color: #798fcc;
-            border-color: #8bb2c9;
-            box-shadow: none;
-            outline: none;
-        }
-        
-        .btn-primary {
-            color: #fff;
-            background-color: #007b5e;
-            border-color: #007b5e;
-        }
-        
-        section .section-title {
-            text-align: center;
-            color: #007b5e;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-        }
-        
-        #team .card {
-            border: none;
-            background: #ffffff;
-        }
-        
-        .image-flip:hover .backside,
-        .image-flip.hover .backside {
-            -webkit-transform: rotateY(0deg);
-            -moz-transform: rotateY(0deg);
-            -o-transform: rotateY(0deg);
-            -ms-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-            border-radius: .25rem;
-        }
-        
-        .image-flip:hover .frontside,
-        .image-flip.hover .frontside {
-            -webkit-transform: rotateY(180deg);
-            -moz-transform: rotateY(180deg);
-            -o-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-        }
-        
-        .mainflip {
-            -webkit-transition: 1s;
-            -webkit-transform-style: preserve-3d;
-            -ms-transition: 1s;
-            -moz-transition: 1s;
-            -moz-transform: perspective(1000px);
-            -moz-transform-style: preserve-3d;
-            -ms-transform-style: preserve-3d;
-            transition: 1s;
-            transform-style: preserve-3d;
-            position: relative;
-        }
-        
-        .frontside {
-            position: relative;
-            -webkit-transform: rotateY(0deg);
-            -ms-transform: rotateY(0deg);
-            z-index: 2;
-            margin-bottom: 30px;
-        }
-        
-        .backside {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: white;
-            -webkit-transform: rotateY(-180deg);
-            -moz-transform: rotateY(-180deg);
-            -o-transform: rotateY(-180deg);
-            -ms-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
-            -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-            -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-            box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-        }
-        
-        .frontside,
-        .backside {
-            -webkit-backface-visibility: hidden;
-            -moz-backface-visibility: hidden;
-            -ms-backface-visibility: hidden;
-            backface-visibility: hidden;
-            -webkit-transition: 1s;
-            -webkit-transform-style: preserve-3d;
-            -moz-transition: 1s;
-            -moz-transform-style: preserve-3d;
-            -o-transition: 1s;
-            -o-transform-style: preserve-3d;
-            -ms-transition: 1s;
-            -ms-transform-style: preserve-3d;
-            transition: 1s;
-            transform-style: preserve-3d;
-        }
-        
-        .frontside .card,
-        .backside .card {
-            min-height: 312px;
-        }
-        
-        .backside .card a {
-            font-size: 18px;
-            color: #007b5e !important;
-        }
-        
-        .frontside .card .card-title,
-        .backside .card .card-title {
-            color: #007b5e !important;
-        }
-        
-        .frontside .card .card-body img {
-            width: 200px;
-            height: 200px;
-        }
-    </style>
+
 
 
 </head>
@@ -150,15 +24,28 @@
         <input type="checkbox" id="check">
         <header>
             </div>
-            <h2><a href="#" class="logo">DownPour</a></h2>
             <div class="navigation">
+                <h3>Performance Evaluation Of Machine Learning Algorithms For DownPour Prediction</h3>
 
-                <a href="#about">Abstract</a>
-                <a href="#info">Guide</a>
-                <a href="#team">Developers</a>
-                <a href="#dashboard">Dashboard</a>
+
+                <a href="/abs">Abstract</a>
+                <a href="/info">Guide</a>
+                <a href="/team">Developers</a>
+                <a href="/dash">Dashboard</a>
                 <a href="/login2">Login</a>
                 <a href="/reg">Register</a>
+                <div class="content" style="margin-top: 8%;">
+                    <div class="info">
+                        <h2>Plant Trees <br><span>Save Rain</span></h2>
+                        <p> <strong>"Plant trees to bring the rains and get rid of the summer's heat.” - Trees help reduce and moderate the temperature and climate, which is why it is so important that we have more of them</strong></p>
+                        <a href="/abs" class="info-btn">More info</a>
+                    </div>
+                </div>
+                <div class="media-icons">
+                    <a href=""><i class="fab fa-linkedin"></i></a>
+                    <a href=""><i class="fab fa-github"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                </div>
 
 
             </div>
@@ -167,294 +54,20 @@
         <i class="fas fa-times close-btn"></i>
         </label>
         </header>
-        <div class="content" style="margin-top: 8%;">
-            <div class="info">
-                <h2>Plant Trees <br><span>Save Rain</span></h2>
-                <p> "Plant trees to bring the rains and get rid of the summer's heat.” - Trees help reduce and moderate the temperature and climate, which is why it is so important that we have more of them</p>
-                <a href="#about" class="info-btn">More info</a>
-            </div>
-        </div>
-        <div class="media-icons">
-            <a href="https://www.linkedin.com/in/subhash-rowtu-951976212/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/subhash546/cs50"><i class="fab fa-github"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-        </div>
-    </section>
-
-    <section id="about">
-        <h4 style="color:darkcyan;text-align:center">Abstract</h4>
-        <h4 style="color:darkcyan;text-align:center">Performance and Evaluation of Machine Learning Algorithms in DownPour Prediction
-        </h4>
-        <h5 style="text-align:center">Under the Guidance of <strong>P.N.S.Lakshmi</strong></h5>
-        <p class="about-content" style="text-align: center;">
-
-            In the hydrological study, the main problem is accurately predicting the rainfall. Due to natural hazards and storm, farmers will lose and destroy their crops. To avoid these problems, accurately and timely predict the rainfall prediction earlier and
-            give caution more first to farmers. Rainfall is said to be an environmental aspect which affects the human activities such as farming production, construction, energy generation, forestry and tourism, etc. The rainfall prediction is more essential
-            as it is concerned with the maximum association with other factors like landslides, flooding, avalanches, earthquakes.
-            <br> <br> The performance of the various Machine Learning (ML), namely Lasso regression, ridge regression, elastic net regression, random forest, gradient boosting and decision tree regressor. Those models performances have been calculated
-            through evaluation metrics such as R^2 score, Mean Absolute Error (MAE), Mean Square Error (MSE), and Root MeanSquareError (RMSE). The objective of this study is to compare different machine learning regression algorithms in rainfall dataset.In
-            this analysis, we conclude that Lasso regression of the linear model is the best model amongsix MLmodels.Lasso model given more R^2 score is 99.21%, MAE is 13.68, MSE is 6432.41 and RMSE is 80.20 at 80 % training data set and 20% attest dataset.
-
 
 
     </section>
 
-    <section id="info">
-        <div>
-            <img src="../static/1727.jpg" alt="P.N.S.Lakshmi">
-        </div>
-        <div>
-            <h2>Guidance</h2>
-            <p class="about-content"> My team Project supervisor, <strong>Mrs.P.N.S.Lakshmi</strong>, M.Tech.</strong> She is a Assistant Professor in Dept.of.CSE at Aditya College Of Engneering ,Surampalem.Who has guided us a lot and encouraged us in every step of project work,
-                his valuable moral support and guidance has been helpful in successful completion of this Project.
-            </p>
-            </p>
-        </div>
-
-    </section>
-
-
-    <!-- Team -->
-    <section id="team" class="pb-5">
-        <div class="container">
-            <br>
-            <br>
-            <br>
-            <h5 class="section-title h1">OUR TEAM</h5>
-            <div class="row">
-                <!-- Team member -->
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="image-flip">
-                        <div class="mainflip flip-0">
-                            <div class="frontside">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <p><img class=" img-fluid imgresize" src="../static/20mh5A0505.jpg" alt="card image"></p>
-                                        <h4 class="card-title">Santhoshi</h4>
-                                        <p class="card-text">Team Leader</p>
-                                        <a href="" class="btn btn-primary btn-sm"><i class="fab fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="backside">
-                                <div class="card">
-                                    <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">M.Santhoshi</h4>
-                                        <p class="card-text">20mh5A0505<br>Kakinada<br>20mh5a0505@acoe.edu.in</p>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-skype"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-google"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./Team member -->
-                <!-- Team member -->
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                        <div class="mainflip">
-                            <div class="frontside">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <p><img class=" img-fluid imgresize" src="../static/subhash.png" alt="card image"></p>
-                                        <h4 class="card-title">Subhash</h4>
-                                        <p class="card-text">Team Member</p>
-                                        <a href="" class="btn btn-primary btn-sm"><i class="fab fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="backside">
-                                <div class="card">
-                                    <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Subhash</h4>
-                                        <p class="card-text">19MH1A0546<br>Pithapuram<br>19mh1a0546@acoe.edu.in</p>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-skype"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-google"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./Team member -->
-                <!-- Team member -->
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                        <div class="mainflip">
-                            <div class="frontside">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <p><img class=" img-fluid imgresize" src="../static/19mh1a0544.jpg" alt="card image"></p>
-                                        <h4 class="card-title">Srinivas</h4>
-                                        <p class="card-text">Team Member</p>
-                                        <a href="" class="btn btn-primary btn-sm"><i class="fab fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="backside">
-                                <div class="card">
-                                    <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Srinivas</h4>
-                                        <p class="card-text">19MH1A0544<br>Pithapuram<br>19mh1a0544@acoe.edu.in</p>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-skype"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-google"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./Team member -->
-                <!-- Team member -->
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                        <div class="mainflip">
-                            <div class="frontside">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <p><img class=" img-fluid imgresize" src="../static/19mh1a0543.jpg" alt="card image"></p>
-                                        <h4 class="card-title">Anudeep</h4>
-                                        <p class="card-text">Team Member</p>
-                                        <a href="" class="btn btn-primary btn-sm"><i class="fab fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="backside">
-                                <div class="card">
-                                    <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Anudeep</h4>
-                                        <p class="card-text">19MH1A0543<br>Kakinada<br>19mh1a0543@acoe.edu.in</p>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="">
-                                                    <i class="fab fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="www.linkedin.com">
-                                                    <i class="fab fa-skype"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="www.linkedin.com">
-                                                    <i class="fab fa-google"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./Team member -->
-                <!-- Team member -->
-
-                <!-- ./Team member -->
-
-            </div>
-        </div>
-    </section>
-    <!-- Team -->
-
-    <section id="dashboard">
-        <h2>Dashboard</h2>
-        <p>This dashboard is done using a software called PowerBI which is a product of Microsoft. Here I have just attached the images of the dashboard because PowerBI needs oraganizational account. So to see the visualizations interactive I am attaching
-            my <a href="../static/rain.pbix" style="color: black; font-weight: bold;">PowerBI</a> dashboard file. This requires PowerBI software to open the file. The usage of dashboards like these is to bring a better understanding about the dataset
-            and also to bring some beautiful insights</p>
-        <img class="dashboard-image" src="../static/dashboard.png" alt="1">
-        <div>
-            <img src="../static/1.png" alt="1">
-            <img src="../static/3.png" alt="3">
-            <img src="../static/4.png" alt="4">
-            <img src="../static/5.png" alt="5">
-            <img src="../static/6.png" alt="6">
-            <img src="../static/7.png" alt="7">
-            <img src="../static/8.png" alt="8">
-            <img src="../static/9.png" alt="9">
-        </div>
-    </section>
 
 
 
 
-    <footer>
-        <p>
-            Developed with ❤️ by Batch 11
-        </p>
-        <div class="media-icons">
-            <a href="https://www.linkedin.com/in/subhash-rowtu-951976212/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/subhash546/cs50"><i class="fab fa-github"></i></a>
-            <a href=""><i class="fab fa-twitter"></i></a>
-        </div>
-        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    </footer>
+
+
+
+
+
+
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Optional JavaScript -->
