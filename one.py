@@ -1,23 +1,117 @@
-print("Welcome")
-print("Subhash")
 
+
+from flask import Flask,render_template,request,redirect,session,url_for
 import sqlite3
-from flask import Flask, redirect, url_for, render_template, request, session
-from datetime import timedelta
-
-
- 
 app = Flask(__name__)
-app.secret_key = "hello"
- 
- 
-@app.route("/")
+app.secret_key = "500"
+# --------------------------------indexpage---------------------------
+@app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
+
+
+# --------------------------------registerpage---------------------------
+@app.route('/reg',methods=['POST','GET'])
+def register():
+    if request.method == "POST":
+# sqlite
+        connection = sqlite3.connect("subhash.db")
+        cursor = connection.cursor()
+
+#Html form
+        name=request.form['name']
+        username=request.form['username']
+        email=request.form['email']
+        password=request.form['password']
+        confirmpassword=request.form['confirmpassword']
+        data=[name,username,email,password,confirmpassword]
+        #print(name,username,email,password,confirmpassword)
+
+#login authentications
+
+        query1="SELECT email FROM pro WHERE email='"+email+"'"
+        cursor.execute(query1)
+        results = cursor.fetchall()
+        if len(results) != 0:
+            return "user already exists"
+        else:
+
+#register data insert
+
+            query="INSERT INTO pro(name,username,email,password,confirmpassword) VALUES (?,?,?,?,?)"
+            cursor.execute(query,data)
+            connection.commit()
+            return redirect('/login2')
+    return render_template('register.html')   
+
+
+
+
+# --------------------------------loginpage---------------------------
+@app.route('/login2',methods=['GET','POST'])
+def login():
+    if request.method == "POST":
+# sqlite
+        connection = sqlite3.connect("subhash.db")
+        cursor = connection.cursor()
+
+#Html form
+        email = request.form['namelogin']
+        password=request.form['passwordlogin']
+
+       # print(username,password)
+#query
+        query = "SELECT email,password FROM pro where email='"+email+"' and password='"+password+"'"
+        cursor.execute(query)
+
+        results = cursor.fetchall()
+#validation
+        if len(results) == 0:
+            return "userid and password is incorrect"
+        else:
+             session['user'] = email
+             return redirect("/success")
+    else:
+        if "user" in session:
+            return redirect("success")
+        return render_template('login2.html')
+
+
+# --------------------------------homepage---------------------------
+@app.route('/success')
+def home():
+    if 'user' in session:
+        user = session['user']
+        return render_template('success.html')
+    else:
+      return redirect(url_for("login2"))
+
+
+# --------------------------------logoutpage---------------------------
+@app.route('/logout')
+def logout():
+    session.pop("user",None)
+    return redirect(url_for("index"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @app.route('/abs')  
 def abs():  
+    session.pop("user",None)
+    return redirect(url_for("index"))
     return render_template("abstract.html");  
 
 @app.route('/team')  
@@ -31,44 +125,22 @@ def guide():
 def dash():  
     return render_template("dashboard.html");  
 
-@app.route('/login2')  
-def login():  
-    return render_template("login2.html");  
 
-@app.route('/reg')  
-def reg():  
-    return render_template("register.html");  
+ 
+
+
 
 
 
     
   
-conn = sqlite3.connect("subhash.db")  
-print("Database opened successfully")  
-  
+
 # conn.execute('CREATE TABLE users (name TEXT, email TEXT, password TEXT)')
 # print ("Table created successfully")
 # conn.close()
   
   
   
-@app.route("/savedetails",methods = ["POST","GET"])  
-def savedetails():  
-    msg = "demo"  
-    if request.method == "POST":  
-        try: 
-            email = request.form["email"]  
-            password = request.form["password"]
-            cPassword = request.form["cPassword"]   
-            with sqlite3.connect("subhash.db") as con:  
-                cur = con.cursor()  
-                cur.execute("INSERT into pro ( email, password,cPassword) values (?,?,?)",(email,password,cPassword))  
-                con.commit()  
-                msg = "User successfully Added"  
-        except:  
-            con.rollback()  
-            msg = "We can not add the employee to the list"  
-        finally:  
-            return render_template("success.html",msg = msg)  
+ 
 if __name__=='__main__':
     app.run(debug=True)

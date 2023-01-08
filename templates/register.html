@@ -1,264 +1,121 @@
-<!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
-<html lang="en">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--<title>Email and Password Validation</title>-->
-
-
-    <!-- CSS -->
-    <style>
-        /* Google Fonts - Poppins */
-        
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
-        
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url("../static/640203.jpg");
-        }
-        
-        .container {
-            position: relative;
-            max-width: 370px;
-            width: 100%;
-            padding: 25px;
-            border-radius: 8px;
-            background-color: #fff;
-        }
-        
-        .container header {
-            font-size: 22px;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .container form {
-            margin-top: 30px;
-        }
-        
-        form .field {
-            margin-bottom: 20px;
-        }
-        
-        form .input-field {
-            position: relative;
-            height: 55px;
-            width: 100%;
-        }
-        
-        .input-field input {
-            height: 100%;
-            width: 100%;
-            outline: none;
-            border: none;
-            border-radius: 8px;
-            padding: 0 15px;
-            border: 1px solid #d1d1d1;
-        }
-        
-        .invalid input {
-            border-color: #d93025;
-        }
-        
-        .input-field .show-hide {
-            position: absolute;
-            right: 13px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 18px;
-            color: #919191;
-            cursor: pointer;
-            padding: 3px;
-        }
-        
-        .field .error {
-            display: flex;
-            align-items: center;
-            margin-top: 6px;
-            color: #d93025;
-            font-size: 13px;
-            display: none;
-        }
-        
-        .invalid .error {
-            display: flex;
-        }
-        
-        .error .error-icon {
-            margin-right: 6px;
-            font-size: 15px;
-        }
-        
-        .create-password .error {
-            align-items: flex-start;
-        }
-        
-        .create-password .error-icon {
-            margin-top: 4px;
-        }
-        
-        .button {
-            margin: 25px 0 6px;
-        }
-        
-        .button input {
-            color: #fff;
-            font-size: 16px;
-            font-weight: 400;
-            background-color: #4070f4;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .button input:hover {
-            background-color: #0e4bf1;
-        }
-    </style>
-
-    <!-- Boxicons CSS -->
+    <title>Register Page</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
+<style>
+    .container {
+        margin-top: 50px;
+        margin-right: 600px;
+        background: url("../static/640203.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 100%;
+    }
+    
+    input,
+    button {
+        outline: 0;
+        border-width: 0 0 2px;
+        border-bottom: outset;
+        width: 350px;
+        margin: 0px 0px 0px 0px;
+        height: 40px;
+    }
+    
+    button {
+        margin-left: 90px;
+    }
+    
+    p {
+        margin: 20px 0px 0px 150px;
+    }
+    
+    .form {
+        width: 50%;
+        height: auto;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    .icon {
+        padding: 10px;
+        background: rgb(255, 30, 154);
+        color: white;
+        min-width: 50px;
+        text-align: center;
+        margin-left: 60px;
+    }
+    
+    #mess {
+        margin: 10px 0px 0px 120px;
+        color: red;
+        display: none;
+    }
+</style>
+<center>
 
-<body>
-
-    <div class="container">
-        <header>Signup</header>
-        <form action="/savedetails" method="POST">
-            <div class="field email-field">
-                <div class="input-field">
-                    <input type="email" placeholder="Enter your email" class="email" name="email" required/>
+    <body class="container">
+        <div class="form">
+            <form onsubmit="return verifyPassword()" action="" method="POST">
+                <h1><b>S</b>ign <b>U</b>p</h1>
+                <hr/>
+                <div class="form-group">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Name *" pattern="[a-zA-Z\s]*" title="Please enter on alphabets only. " name="name" required>
+                </div><br/>
+                <div class="form-group">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Username *" name="username" required>
                 </div>
-                <span class="error email-error">
-                <i class="bx bx-error-circle error-icon"></i>
-                <p class="error-text">Please enter a valid email</p>
-              </span>
-            </div>
-            <div class="field create-password">
-                <div class="input-field">
-                    <input type="password" placeholder="Create password" class="password" name="password" required/>
-                    <i class="bx bx-hide show-hide"></i>
+                <br/>
+                <div class="form-group">
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" placeholder="Email *" pattern="[a-z0-9._%+-]+@gmail.com" title="enter valid mail id" name="email" required>
+                </div><br/>
+                <div class="form-group">
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Password *" id="psw" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" title="Must contain atleast one number and one uppercase and lowercase letter and  one Symbol, and at least 8 or more characters"
+                        name="password" required>
                 </div>
-                <span class="error password-error">
-                <i class="bx bx-error-circle error-icon"></i>
-                <p class="error-text">
-                  Please enter atleast 8 charatcer with number, symbol, small and
-                  capital letter.
-                </p>
-              </span>
-            </div>
-            <div class="field confirm-password">
-                <div class="input-field">
-                    <input type="password" placeholder="Confirm password" class="cPassword" name="cPassword" required />
-                    <i class="bx bx-hide show-hide"></i>
+                <br/>
+                <div class="form-group">
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Confirm Password *" id="cpsw" onkeypress="pass()" name="confirmpassword" required>
                 </div>
-                <span class="error cPassword-error">
-                <i class="bx bx-error-circle error-icon"></i>
-                <p class="error-text">Password don't match</p>
-              </span>
-            </div>
-            <div class="input-field button">
-                <input type="submit" value="submit now" />
-            </div>
-        </form>
-    </div>
+                <p id="mess">Password not matched</p><br/>
+                <button class="btn btn-primary">Sign Up</button><br/>
+                <p>Already have an account? <a href="/login2">Sign In</a></p>
+            </form>
+        </div>
+    </body>
+    <script>
+        function verifyPassword() {
+            var pw = document.getElementById("psw").value;
+            var cpw = document.getElementById("cpsw").value;
+            if (pw == cpw) {
+                //alert("Register Success"); 
+            } else {
+                document.getElementById("mess").style.display = "block";
+                return false;
+            }
+        }
 
-    <!-- JavaScript -->
-
-
-
-
-
-
-
-
-
-</body>
+        function pass() {
+            document.getElementById("mess").style.display = "none";
+        }
+    </script>
+</center>
 
 </html>
-
-
-
-<!--<script>
-    const form = document.querySelector("form"),
-        emailField = form.querySelector(".email-field"),
-        emailInput = emailField.querySelector(".email"),
-        passField = form.querySelector(".create-password"),
-        passInput = passField.querySelector(".password"),
-        cPassField = form.querySelector(".confirm-password"),
-        cPassInput = cPassField.querySelector(".cPassword");
-
-    // Email Validtion
-    function checkEmail() {
-        const emaiPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-        if (!emailInput.value.match(emaiPattern)) {
-            return emailField.classList.add("invalid"); //adding invalid class if email value do not mathced with email pattern
-        }
-        emailField.classList.remove("invalid"); //removing invalid class if email value matched with emaiPattern
-    }
-
-    // Hide and show password
-    const eyeIcons = document.querySelectorAll(".show-hide");
-
-    eyeIcons.forEach((eyeIcon) => {
-        eyeIcon.addEventListener("click", () => {
-            const pInput = eyeIcon.parentElement.querySelector("input"); //getting parent element of eye icon and selecting the password input
-            if (pInput.type === "password") {
-                eyeIcon.classList.replace("bx-hide", "bx-show");
-                return (pInput.type = "text");
-            }
-            eyeIcon.classList.replace("bx-show", "bx-hide");
-            pInput.type = "password";
-        });
-    });
-
-    // Password Validation
-    function createPass() {
-        const passPattern =
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-        if (!passInput.value.match(passPattern)) {
-            return passField.classList.add("invalid"); //adding invalid class if password input value do not match with passPattern
-        }
-        passField.classList.remove("invalid"); //removing invalid class if password input value matched with passPattern
-    }
-
-    // Confirm Password Validtion
-    function confirmPass() {
-        if (passInput.value !== cPassInput.value || cPassInput.value === "") {
-            return cPassField.classList.add("invalid");
-        }
-        cPassField.classList.remove("invalid");
-    }
-
-    // Calling Funtion on Form Sumbit
-    form.addEventListener("submit", (e) => {
-        e.preventDefault(); //preventing form submitting
-        checkEmail();
-        createPass();
-        confirmPass();
-
-        //calling function on key up
-        emailInput.addEventListener("keyup", checkEmail);
-        passInput.addEventListener("keyup", createPass);
-        cPassInput.addEventListener("keyup", confirmPass);
-
-        if (!emailField.classList.contains("invalid") &&
-            !passField.classList.contains("invalid") &&
-            !cPassField.classList.contains("invalid")
-        ) {
-            location.href = form.getAttribute("action");
-        }
-    });
-</script>
