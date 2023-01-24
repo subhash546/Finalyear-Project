@@ -94,24 +94,8 @@ def logout():
     return redirect(url_for("index"))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route('/abs')  
 def abs():  
-    session.pop("user",None)
-    return redirect(url_for("index"))
     return render_template("abstract.html");  
 
 @app.route('/team')  
